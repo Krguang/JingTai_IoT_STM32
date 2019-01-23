@@ -212,7 +212,7 @@ void userHandle(void)
 	currentDataPoint.valueJK_1_reShuiFaKaiDu = localArray[5];
 	currentDataPoint.valueJK_1_xinFengWenDU = localArray[6];
 	currentDataPoint.valueJK_1_jiaShiQIKaiDu = localArray[7];
-	currentDataPoint.valueJK_1_beiYong = localArray[29];
+	//currentDataPoint.valueJK_1_beiYong = localArray[29];		//这个数据点改为机组数量
 	currentDataPoint.valueJK_2_tempReal = localArray[30];
 	currentDataPoint.valueJK_2_humiReal = localArray[31];
 	currentDataPoint.valueJK_2_tempSet = localArray[32];
@@ -255,6 +255,8 @@ void userInit(void)
     memset((uint8_t*)&currentDataPoint, 0, sizeof(dataPoint_t));
     
     /** Warning !!! DataPoint Variables Init , Must Within The Data Range **/ 
+
+	currentDataPoint.valueJK_1_beiYong = 4;
 
 }
 
