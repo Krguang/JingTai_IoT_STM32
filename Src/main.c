@@ -82,6 +82,13 @@ static void MX_NVIC_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+//¸´Î»G510Ä£¿é
+void G510_Reset() {
+	HAL_GPIO_WritePin(G510_RST_GPIO_Port, G510_RST_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1000);
+	HAL_GPIO_WritePin(G510_RST_GPIO_Port, G510_RST_Pin, GPIO_PIN_SET);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -120,7 +127,7 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
-
+	G510_Reset();
 	timerInit();
 	uartInit();
 
